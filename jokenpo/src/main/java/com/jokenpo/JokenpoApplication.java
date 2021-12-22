@@ -1,11 +1,8 @@
 package com.jokenpo;
 
+import com.jokenpo.juiz.Resultado;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 @SpringBootApplication
@@ -15,14 +12,15 @@ public class JokenpoApplication {
 		SpringApplication.run(JokenpoApplication.class, args);
 
 		Scanner sc = new Scanner(System.in);
+		Resultado resultado = new Resultado();
 
 		/*Definição variáveis*/
-		int opt1 = 0, opt2 = 0;
+		int opt1, opt2;
 		int novamente, aux;
 		String empate = "\nHouve um Empate!\n";
-		String pedra = "\nPedra ganhou!\n";
-		String tesoura = "\nTesoura ganhou!\n";
-		String papel = "\nPapel ganhou!\n";
+		String pedra = "\nResultado: Pedra ganhou!\n";
+		String tesoura = "\nResultado: Tesoura ganhou!\n";
+		String papel = "\nResultado: Papel ganhou!\n";
 
 		System.out.println("\nOlá, seja bem vindo ao Jokenpo!");
 
@@ -61,27 +59,17 @@ public class JokenpoApplication {
 				}
 			} while (opt2 < 1 || opt2 > 3);
 
-			if (opt1 == 1 && opt2 == 1 || opt1 == 2 && opt2 == 2 || opt1 == 3 && opt2 == 3) {
+			if (opt1 == opt2 ) {
 				System.out.println(empate);
-			}
-
-			if (opt1 == 1 && opt2 == 2) {
+			} else if (opt1 == 1 && opt2 == 2 || opt1 == 2 && opt2 == 1) {
 				System.out.println(pedra);
-			} else if (opt1 == 1 && opt2 == 3) {
+			} else if (opt1 == 2 && opt2 == 3 || opt1 == 3 && opt2 == 2) {
+				System.out.println(tesoura);
+			} else if (opt1 == 1 && opt2 == 3 || opt1 == 3 && opt2 == 1) {
 				System.out.println(papel);
 			}
 
-			if (opt1 == 2 && opt2 == 1) {
-				System.out.println(pedra);
-			} else if (opt1 == 2 && opt2 == 3) {
-				System.out.println(tesoura);
-			}
-
-			if (opt1 == 3 && opt2 == 1) {
-				System.out.println(papel);
-			} else if (opt1 == 3 && opt2 == 2) {
-				System.out.println(tesoura);
-			}
+			String chamada = Resultado.verificaEmpate(2,3);
 
 			do {
 				novamente = 0;
