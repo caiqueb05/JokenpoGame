@@ -1,8 +1,8 @@
 # JokenpoGame
 Elaboração de um código que simule o jogo de Jokenpo
 
-1- Implementada a lógica passada na situação problema;
-2- Implementado tratamento de excptions;
-3- Implementados testes unitários com Junit;
+<p>1- Implementada a lógica passada na situação problema;</p>
+<p>2- Implementado tratamento de excptions;</p>
+<p>3- Implementados testes unitários com Junit;</p>
 
-Projeto realizado com Springboot no Intellij, roda sem problemas no Eclipse também.
+<p>Projeto realizado com Springboot no Intellij, roda sem problemas no Eclipse também.</p>
