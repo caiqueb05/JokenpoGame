@@ -5,4 +5,4 @@ Elaboração de um código que simule o jogo de Jokenpo
 <p>2- Implementado tratamento de excptions;</p>
 <p>3- Implementados testes unitários com Junit;</p>
 
-<p>Projeto realizado com Springboot no Intellij, roda sem problemas no Eclipse também.</p>
+<p>Projeto realizado com Springboot e Maven no Intellij, roda sem problemas no Eclipse também.</p>
